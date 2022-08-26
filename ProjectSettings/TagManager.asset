@@ -11,6 +11,7 @@ TagManager:
   - NoMask
   - ObstacleRemover
   - Obstacle
+  - Rope
   layers:
   - Default
   - TransparentFX

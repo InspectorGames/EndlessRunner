@@ -17,7 +17,7 @@ public class InputManager : MonoBehaviour
     public bool JumpDown { get { return jumpDown; } }
     public bool JumpUp { get { return jumpUp; } }
 
-    public Action OnJumpStarted;
+    public Action OnActionStarted;
     public Action OnPauseStarted;
 
     private void Awake()
@@ -30,11 +30,11 @@ public class InputManager : MonoBehaviour
         xAxis = ctx.ReadValue<float>();
     }
 
-    public void OnJump(InputAction.CallbackContext ctx)
+    public void OnAction(InputAction.CallbackContext ctx)
     {
         if(ctx.phase == InputActionPhase.Started)
         {
-            OnJumpStarted?.Invoke();
+            OnActionStarted?.Invoke();
             jumpDown = true;
             jumpUp = false;
         }
